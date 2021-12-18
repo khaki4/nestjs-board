@@ -38,8 +38,6 @@ export class BoardsService {
 
   updateBoardStatus(id: string, status: BoardStatus): Board {
     const board = this.getBoardById(id);
-    console.log('find board', board);
-    console.log('find board staus', status);
     board.status = status;
     return board;
   }

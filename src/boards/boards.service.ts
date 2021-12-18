@@ -22,4 +22,10 @@ export class BoardsService {
     this.boards.push(board);
     return board;
   }
+
+  getBoardById(id: string): Board {
+    console.log('input id', id);
+
+    return this.boards.find((board) => board.id === id);
+  }
 }

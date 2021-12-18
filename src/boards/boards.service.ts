@@ -24,12 +24,18 @@ export class BoardsService {
   }
 
   getBoardById(id: string): Board {
-    console.log('input id', id);
-
     return this.boards.find((board) => board.id === id);
   }
 
   deleteBoard(id: string): void {
     this.boards = this.boards.filter((board) => board.id !== id);
+  }
+
+  updateBoardStatus(id: string, status: BoardStatus): Board {
+    const board = this.getBoardById(id);
+    console.log('find board', board);
+    console.log('find board staus', status);
+    board.status = status;
+    return board;
   }
 }
